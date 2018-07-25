@@ -7,9 +7,11 @@
     <persistence-unit name="templatePU" transaction-type="RESOURCE_LOCAL">
 
         <description>Hibernate test case template Persistence Unit</description>
+
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
         <exclude-unlisted-classes>false</exclude-unlisted-classes>
+
 
         <properties>
             <property name="hibernate.archive.autodetection" value="class, hbm"/>
@@ -18,6 +20,8 @@
             <property name="hibernate.connection.driver_class" value="org.h2.Driver"/>
             <property name="hibernate.connection.url" value="jdbc:h2:mem:db1;DB_CLOSE_DELAY=-1"/>
             <property name="hibernate.connection.username" value="sa"/>
+
+            <property name="hibernate.session_factory.interceptor" value="org.hibernate.bugs.JPAUnitTestCase$AnInterceptor"/>
 
             <property name="hibernate.connection.pool_size" value="5"/>
 
@@ -38,6 +42,5 @@
             <property name="hibernate.service.allow_crawling" value="false"/>
             <property name="hibernate.session.events.log" value="true"/>
         </properties>
-
     </persistence-unit>
 </persistence>
