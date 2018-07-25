@@ -7,9 +7,12 @@
     <persistence-unit name="templatePU" transaction-type="RESOURCE_LOCAL">
 
         <description>Hibernate test case template Persistence Unit</description>
+
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <mapping-file>META-INF/orm.xml</mapping-file>
 
         <exclude-unlisted-classes>false</exclude-unlisted-classes>
+
 
         <properties>
             <property name="hibernate.archive.autodetection" value="class, hbm"/>
@@ -38,6 +41,5 @@
             <property name="hibernate.service.allow_crawling" value="false"/>
             <property name="hibernate.session.events.log" value="true"/>
         </properties>
-
     </persistence-unit>
 </persistence>
