@@ -9,7 +9,10 @@
         <description>Hibernate test case template Persistence Unit</description>
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
-        <exclude-unlisted-classes>false</exclude-unlisted-classes>
+        <!--exclude-unlisted-classes>false</exclude-unlisted-classes-->
+        <class>support.hibernate.entity.ConcreteEntityOne</class>
+        <class>support.hibernate.entity.ConcreteEntityTwo</class>
+
 
         <properties>
             <property name="hibernate.archive.autodetection" value="class, hbm"/>
